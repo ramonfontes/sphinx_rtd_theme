@@ -1,32 +1,28 @@
 .. include:: ../README.rst
 
 .. toctree::
-   :caption: Theme Documentation
+   :caption: Security
    :maxdepth: 2
 
-   installing
-   configuring
-   contributing
+   evil-twin-attack
+   arp-spoofing
 
 .. toctree::
    :maxdepth: 1
    :hidden:
 
-   changelog
+   changselog
 
 .. toctree::
     :maxdepth: 2
     :numbered:
     :caption: Demo Documentation
 
-    demo/structure
-    demo/demo
-    demo/lists_tables
-    demo/api
+    aaaaa
 
 .. toctree::
     :maxdepth: 3
     :numbered:
-    :caption: This is an incredibly long caption for a long menu
+    :caption: test
 
-    demo/long
+    demee
