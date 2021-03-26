@@ -214,6 +214,7 @@ O ataque agora está completo: podemos visualizar o tráfego não criptografado 
 .. Warning::
 
     **Perguntas a serem respondidas**
+    
     1. Comente sobre o ataque de downgrade de protocolo. Diga  como ele funciona.
     2. O que seria o HTTP Strict Transport Security (HSTS) e como ele seria útil no cenário prático realizado acima?
     3. Anexe duas imagens do wireshark onde, do lado do atacante, mostre requisições de tráfego criptografado e também requisições de tráfego descriptografado.
