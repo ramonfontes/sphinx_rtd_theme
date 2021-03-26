@@ -88,3 +88,10 @@ Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-t
 
     sudo python evil-twin-attack.py
     
+De acordo com a topologia acima, `sta1` deverá estar conectado ao ponto de acesso `ap1`. Voce pode confirmar esta afirmação utilizando o comando abaixo:
+
+.. code:: console
+
+    sta1 iw dev sta1-wlan0 link
+    
+Na topologia do código acima, `sta1` seria a vítima e `sta2` o atacante. Além disso, o ponto de acesso `ap1` seria o ponto de acesso real e o ataque seria feito através do ponto de acesso `ap2`.
