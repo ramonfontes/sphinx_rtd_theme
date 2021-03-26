@@ -6,15 +6,16 @@ ARP Spoofing e Downgrade de Protocolo
 -------------
 
 .. Note::
-    **In this short demo you will:** 
-    - Learn on How to perform ARP Spoofing attack and how to perform protocol downgrade
+    **Nesta demo você irá aprender como realizar o ataque de ARP Spoofing e também como realizar o downgrade de protocolo:** 
 
-    **Requirements:** 
+    **Requisitos:** 
     - Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
     - dsniff
     - arpon
     - sslstrip
     - curl
+    
+    **A VM disponível na página do código-fonte do Mininet-WiFi possui todos os requisitos necessários para reprodução deste documento**
 
 Antes de tudo você precisa identificar a topologia de rede que será gerada através do código abaixo:
 
