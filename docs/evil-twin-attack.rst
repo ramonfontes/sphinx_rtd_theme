@@ -80,3 +80,9 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      topology()
 ```
 
+Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-twin-attack.py', execute-o conforme abaixo:
+
+.. code:: console
+
+    sudo python evil-twin-attack.py
+    
