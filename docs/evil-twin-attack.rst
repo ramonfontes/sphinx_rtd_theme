@@ -82,7 +82,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      topology()
 ```
 
-Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-twin-attack.py', execute-o conforme abaixo:
+Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-twin-attack.py`, execute-o conforme abaixo:
 
 .. code:: console
 
@@ -95,3 +95,7 @@ De acordo com a topologia acima, `sta1` deverá estar conectado ao ponto de aces
     sta1 iw dev sta1-wlan0 link
     
 Na topologia do código acima, `sta1` seria a vítima e `sta2` o atacante. Além disso, o ponto de acesso `ap1` seria o ponto de acesso real e o ataque seria feito através do ponto de acesso `ap2`.
+
+.. code:: console
+
+    sta1 iw dev sta1-wlan0 link
