@@ -174,10 +174,12 @@ E depois:
 Na máquina da vítima, use o `curl` para enviar uma solicitação GET para http://globo.com.
 
 .. Note::
+
    Caso obter algum erro nesta etapa, tente realizar um ping para globo.com a partir de sta1. Se não houver êxito no ping adicione entrada de servidor DNS em /etc/resolv.conf também a partir de sta1.
 
 
 .. code:: console
+
     mininet-wifi> sta1 curl -vvv http://globo.com
     *   Trying 186.192.90.12:80...
     * TCP_NODELAY set
