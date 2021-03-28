@@ -4,6 +4,7 @@
    :caption: Security
    :maxdepth: 2
 
+   dictionary_attack
    evil-twin-attack
    arp-spoofing
 
