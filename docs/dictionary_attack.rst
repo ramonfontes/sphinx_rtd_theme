@@ -97,3 +97,8 @@ E voi-lá! Senha descoberta!
                            4B 03 8F B4 86 8F 8D A4 59 CD 30 2D 71 D7 AF 18 
 
       EAPOL HMAC     : C1 3D 58 9D 02 CB 03 4A FC 3D 44 96 FF 2D 5D 79
+
+
+.. admonition:: Pergunta
+
+   - Q1. O que poderia ser feito para tentar mitigar este tipo de ataque?
