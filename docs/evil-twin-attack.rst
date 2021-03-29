@@ -56,14 +56,6 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      #ap2.cmd('pkill -f \"ap2-wlan0.apconf\"')
      ap2.cmd('ifconfig ap2-wlan0 up 192.168.190.1 netmask 255.255.255.0')
 
-     #ap2.cmd('iptables --flush')
-     ap2.cmd('iptables --table nat --append POSTROUTING --out-interface ap2-eth1 -j MASQUERADE')
-     ap2.cmd('iptables --append FORWARD --in-interface ap2-wlan0 -j ACCEPT')
-     ap2.cmd('iptables -t nat -A PREROUTING -p tcp --dport 80 -j DNAT --to-destination 192.168.190.1:80')
-     ap2.cmd('iptables -t nat -A PREROUTING -p tcp --dport 443 -j DNAT --to-destination 192.168.190.1:80')
-     ap2.cmd('iptables -t nat -A POSTROUTING -j MASQUERADE')
-     ap2.cmd('echo 1 > /proc/sys/net/ipv4/ip_forward')
-
      sta2.cmd('route add default gw 192.168.190.1')
      sta2.cmd('iw dev sta1-wlan0 interface add mon0 type monitor')
      sta1.cmd('iwconfig sta1-wlan0 essid simplewifi ap 02:00:00:00:03:00')
@@ -137,7 +129,7 @@ Neste momento, você que é `sta2`, deverá conectar-se ao ponto de acesso `ap2`
 
 .. admonition:: Passo a ser realizado
 
-   - Agora, você deverá configurar `ap2` de forma que todo tráfego tendo como porta de origem 80 seja redirecionado para 192.168.190.1 também na porta 80.
+   - Agora, você deverá configurar `ap2` de forma que todo tráfego tendo como porta de origem 80 seja redirecionado para 192.168.190.1 também na porta 80. Dica: você pode ter que utilizar o `iptables`.
    - Como o `ap2` já vem pré-configurado com os recursos de software necessários para a execução do ataque, inicie os serviços `apache2` e `mysql`.
    - Defina o endereço de DNS de `sta2` para 8.8.8.8.
  
@@ -160,12 +152,13 @@ Você pode confirmar a obtenção das informações através de uma consulta na 
 .. admonition:: Passo a ser realizado
 
      mysql> select * from wpa_keys;
-     +-----------+-----------+
-     | password1 | password2 |
-     +-----------+-----------+
-     | teste     | teste     |
-     +-----------+-----------+
-     1 row in set (0.00 sec)
+     
+     +-----------+-----------+   
+     | password1 | password2 |   
+     +-----------+-----------+   
+     | teste     | teste     |   
+     +-----------+-----------+  
+     1 row in set (0.00 sec)   
 
 Agora, só nos basta executar o comando abaixo para forçar a desassociação de `sta1` em relação ao `ap1`.
 
