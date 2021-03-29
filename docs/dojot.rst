@@ -6,7 +6,7 @@ In this activity we will see some examples of how to simulate a 6loWPAN network 
 
 .. Note::
 
-    First of all, you will need to install _mosquitto_, _mosquitto-clients_ and _paho-mqtt_ packages as well as _Dojot_ (http://www.dojot.com.br/).
+    First of all, you will need to install `mosquitto`, `mosquitto-clients` and `paho-mqtt` packages as well as `Dojot` (http://www.dojot.com.br/).
 
     Follow the detailed install instructions available here: https://docs.google.com/document/d/1tbeC0T-zd7yNnSS16IYYdp4UXXk-ePKg1OZm6_XaDAQ/edit?usp=sharing
 
@@ -33,6 +33,7 @@ You can run the following commands if you want to work with the commit **db71bf4
 
 
 .. code:: console
+
     ~/mininet-wifi$ git checkout db71bf47cb
     ~/mininet-wifi$ sudo make install
 
