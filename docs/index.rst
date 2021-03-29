@@ -17,9 +17,9 @@
 .. toctree::
     :maxdepth: 2
     :numbered:
-    :caption: Demo Documentation
+    :caption: Internet of Things
 
-    aaaaa
+    dojot
 
 .. toctree::
     :maxdepth: 3
