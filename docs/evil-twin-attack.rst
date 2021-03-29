@@ -3,7 +3,7 @@ Evil Twin Attack
 ************
 
 
-Hackeando a senha WPA2 usando Evil Twin Attack | DNSMASQ e Hostapd
+Hackeando a senha WPA2 usando Evil Twin Attack e Hostapd
 -------------
 
 .. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/evil-twin.png?raw=true
@@ -77,6 +77,10 @@ Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-t
 .. code:: console
 
     sudo python evil-twin-attack.py
+    
+.. warning:: 
+
+    O tempo de execução será maior se você estiver executando o código acima pela primeira vez, pois uma imagem gravada em conta no Docker será carregada na VM.
     
 De acordo com a topologia acima, `sta1` deverá estar conectado ao ponto de acesso `ap1`. Voce pode confirmar esta afirmação utilizando o comando abaixo:
 
