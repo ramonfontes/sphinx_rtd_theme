@@ -4,10 +4,11 @@
    :caption: Security
    :maxdepth: 2
 
+   arp-spoofing
    dictionary_attack
    evil-twin-attack
-   arp-spoofing
-
+   wpe-brute-force
+   
 .. toctree::
    :maxdepth: 1
    :hidden:
