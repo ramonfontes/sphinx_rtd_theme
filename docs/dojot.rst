@@ -39,12 +39,12 @@ You can run the following commands if you want to work with the commit **db71bf4
 
 Now that we already have our environment ready to be used, let's take the scripts we will use in this activity. You can find three codes below:
 
-**lowpan.<span>py**: the Mininet-WiFi script (We will only run this script. The others will be loaded automatically)
-**temperature-simulator.<span>py**: our temperature simulator
-**controller-sub.<span>py**: code of the controller that will receive messages sent by Dojot
+**lowpan.py**: the Mininet-WiFi script (We will only run this script. The others will be loaded automatically)
+**temperature-simulator.py**: our temperature simulator
+**controller-sub.py**: code of the controller that will receive messages sent by Dojot
 
 
-**lowpan.<span>py**:
+**lowpan.py**:
 
 .. code:: python
 
@@ -141,7 +141,7 @@ Now that we already have our environment ready to be used, let's take the script
       topology()
 
    
-**temperature-simulator.<span>py**:
+**temperature-simulator.py**:
     
 .. code:: python
 
@@ -179,7 +179,7 @@ Now that we already have our environment ready to be used, let's take the script
         sleep(5)
 
 
-**controller-sub.<span>py**:
+**controller-sub.py**:
 
 
 .. code:: python
@@ -234,18 +234,18 @@ Then, considering that you already have installed Dojot, open its dashboard in a
 
 Now, in the dashboard you need to do the following steps:
 
-  1. create a new template and an attribute called _sensor1-temperature_ with value type _integer_
-  2. now open the _device_ menu and add the template created previously
-  3. go to _flows_ and add an _event device_  as input flow. Select the device you have created and check both _actuation_ and _publication_ checkboxes as well. 
-  4. add a _change function_ and configure the set field as below:
+  - create a new template and an attribute called _sensor1-temperature_ with value type _integer_
+  - now open the _device_ menu and add the template created previously
+  - go to _flows_ and add an _event device_  as input flow. Select the device you have created and check both _actuation_ and _publication_ checkboxes as well. 
+  - add a _change function_ and configure the set field as below:
   ```msg.payload.data.attrs.sta1-temperature```
-  5. in the "to" field, write:
+  - in the "to" field, write:
   ```Alert message!```
-  6. finally, add a _multi actuate node_ and select _Specific Devices_ in the action field. Then select your device and configure the source field as below:
+  - finally, add a _multi actuate node_ and select _Specific Devices_ in the action field. Then select your device and configure the source field as below:
   ```msg.payload.data.attrs.sta1-temperature```
-  7. create a link between the _event device_ and the _change function_ and another link between the _change function_ and the _multi actuate node_
-  7. save the changes in the dashboard!
-  8. close the web browser
+  - create a link between the _event device_ and the _change function_ and another link between the _change function_ and the _multi actuate node_
+  - save the changes in the dashboard!
+  - close the web browser
 
 Now, let's run our network topology. To do so you need to run `lowpan.py` as below:
 
@@ -257,7 +257,7 @@ Now, let's run our network topology. To do so you need to run `lowpan.py` as bel
 * **temperature**: topic
 
 
-Four terminals should appear: 1 for each sensor and 1 for the controller
+Four terminals should appear: one for each sensor and one for the controller
 
 
 Open **the Dojot's dashboard** and you will be able to see some values being received by Dojot. You will also be able to see the "Alert message" being received by the controller's terminal.
