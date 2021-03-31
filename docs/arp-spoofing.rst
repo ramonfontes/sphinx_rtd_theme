@@ -217,7 +217,7 @@ O ataque agora está completo: podemos visualizar o tráfego não criptografado 
     
     - Q1. Comente sobre o ataque de downgrade de protocolo. Diga  como ele funciona.
     - Q2. O que seria o HTTP Strict Transport Security (HSTS) e como ele seria útil no cenário prático realizado acima?
-    - Q3. Anexe duas imagens do wireshark onde, do lado do atacante, mostre requisições de tráfego criptografado e também requisições de tráfego descriptografado.
+    - Q3. Anexe duas imagens do wireshark onde, do lado do atacante, mostre requisições de tráfego criptografado e também requisições de tráfego descriptografadas.
 
 
 Como evitar o ARP Spoofing
