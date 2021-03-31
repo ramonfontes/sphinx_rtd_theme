@@ -5,6 +5,7 @@
    :maxdepth: 2
 
    arp-spoofing
+   dos
    dictionary_attack
    evil-twin-attack
    wpe-brute-force
