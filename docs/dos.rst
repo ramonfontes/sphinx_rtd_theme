@@ -79,9 +79,9 @@ Então, após executar o código, um simples ataque DoS (não DDoS) poderia ser 
 
 .. Note::
 
-   hping3: carrega o hping3.
+   - hping3: carrega o hping3.
    -S: especifica pacotes SYN.
    –flood: respostas serão ignoradas (é por isso que as respostas não serão mostradas) e os pacotes serão enviados o mais rápido possível.
    -V: Verbosity.
    -p 80: porta 80.
-   170.155.9.185: IP alvo.
+   - 170.155.9.185: IP alvo.
