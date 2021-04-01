@@ -24,12 +24,12 @@ In this activity we will see some examples of how to simulate a 6loWPAN network 
 
     How to install Dojot?
 
-    You can follow the instructions available at https://dojotdocs.readthedocs.io/en/latest/installation-guide.html#installation. However, I strongly suggest you to use the docker-compose.yml file available at https://gist.github.com/ramonfontes/fd8360e1c7a1d8f0f9b5e8e1d3f555de. That said, you have to replace the docker-compose.ym file provided by dojot with the suggested one.
+    You can follow the instructions available at https://dojotdocs.readthedocs.io/en/latest/installation-guide.html#installation. However, I strongly suggest you to use the ```docker-compose.yml``` file available at https://gist.github.com/ramonfontes/fd8360e1c7a1d8f0f9b5e8e1d3f555de. That said, you have to replace the ```docker-compose.yml``` file provided by dojot with the suggested one.
 
 
-In this activity we will simulate some sensors that send the current temperature to Dojot. The code will find below should work with the most recent version of Mininet-WiFi, but you can consider the commit **db71bf47cb** if you face problems with it.
+In this activity we will simulate some sensors that send the current temperature to Dojot. The code will find below should work with the most recent version of Mininet-WiFi, but you can consider the commit ```db71bf47cb``` if you face problems with it.
 
-You can run the following commands if you want to work with the commit **db71bf47cb**:
+You can run the following commands if you want to work with the commit ```db71bf47cb```:
 
 
 .. code:: console
@@ -40,12 +40,12 @@ You can run the following commands if you want to work with the commit **db71bf4
 
 Now that we already have our environment ready to be used, let's take the scripts we will use in this activity. You can find three codes below:
 
-**lowpan.py**: the Mininet-WiFi script (We will only run this script. The others will be loaded automatically)
-**temperature-simulator.py**: our temperature simulator
-**controller-sub.py**: code of the controller that will receive messages sent by Dojot
+```lowpan.py```: the Mininet-WiFi script (We will only run this script. The others will be loaded automatically)
+```temperature-simulator.py```: our temperature simulator
+```controller-sub.py```: code of the controller that will receive messages sent by Dojot
 
 
-**lowpan.py**:
+```lowpan.py```:
 
 .. code:: python
 
@@ -142,7 +142,7 @@ Now that we already have our environment ready to be used, let's take the script
       topology()
 
    
-**temperature-simulator.py**:
+```temperature-simulator.py```:
     
 .. code:: python
 
@@ -180,7 +180,7 @@ Now that we already have our environment ready to be used, let's take the script
         sleep(5)
 
 
-**controller-sub.py**:
+```controller-sub.py```:
 
 
 .. code:: python
@@ -254,8 +254,8 @@ Now, let's run our network topology. To do so you need to run ```lowpan.py``` as
     ~/mininet-wifi$ sudo python lowpan.py df7327 temperature
 
 
-* **df7327**: device id created by Dojot - you have to set the id of a device
-* **temperature**: topic
+* ```df7327```: device id created by Dojot - you have to set the id of a device
+* ```temperature```: topic
 
 
 Four terminals should appear: one for each sensor and one for the controller
