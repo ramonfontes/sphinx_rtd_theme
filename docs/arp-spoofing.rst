@@ -208,7 +208,7 @@ Na máquina da vítima, use o `curl` para enviar uma solicitação GET para http
     * Connection #0 to host globo.com left intact
     
 
-Como é possível notar, a solicitação foi redirecionada para http://www.globo.com/. Outro GET nesta nova URL irá retornar o conteúdo da página não criptografado. 
+Como é possível notar, a solicitação foi redirecionada para http://www.globo.com/. Outro GET nesta nova URL irá retornar o conteúdo da página não criptografado. Experimente utilizar o navegador a partir da vítima para uma experiência mais realista.
 
 O ataque agora está completo: podemos visualizar o tráfego não criptografado entre a vítima e o site vulnerável usando HTTPS. No diretório onde você executou o sslstrip você também poderá observar um arquivo chamado de sslstrip.log. Este arquivo possui todas as informações capturadas pelo sslstrip.
 
