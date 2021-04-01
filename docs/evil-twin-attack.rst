@@ -16,7 +16,7 @@ Hackeando a senha WPA2 usando Evil Twin Attack e Hostapd
   - Containernet - https://github.com/ramonfontes/containernet
   - Hostapd
 
-  **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Caso alguma dependência esteja faltando ela terá de ser resolvida**
+  **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Porém, para utilizar o containernet você deverá entrar no diretório ~/containernet e dentro dele executar o comando `sudo make install` Caso alguma dependência esteja faltando ela terá de ser resolvida.**
 
 Antes de tudo você precisa identificar a topologia de rede que será gerada através do código abaixo:
 
@@ -70,7 +70,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
  if __name__ == '__main__':
      setLogLevel('info')
      topology()
-```
+
 
 Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-twin-attack.py`, execute-o conforme abaixo:
 
