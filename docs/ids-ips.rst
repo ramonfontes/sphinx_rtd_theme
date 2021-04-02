@@ -80,20 +80,51 @@ Alternativamente, você também pode definir endereços IP específicos separado
 
 .. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/snort2.png?raw=true
 
-Agora vamos executar o comando abaixo na linha de comando:
+Agora, execute o script acima e em seguida o comando abaixo na linha de comando a partir de ```h3```:
 
-# snort -d -l /var/log/snort/ -h 10.0.0.0/8 -A console -c /etc/snort/snort.conf
+
+.. code:: console
+   
+   mininet-wifi> xterm h3
+   h3# snort -d -l /var/log/snort/ -h 10.0.0.0/8 -A console -c /etc/snort/snort.conf
 
 Onde:
+   
    - d = tells snort to show data
    - l = determines the logs directory
    - h = specifies the network to monitor
    - A = instructs snort to print alerts in the console
    - c = specifies snort the configuration file
 
+Agora, vamos lançar uma verificação rápida a partir de ```h1``` usando o nmap:
 
 .. code:: console
 
-  mininet-wifi> xxxx
+    mininet-wifi> h1 nmap -v -sT -0 10.0.0.254
+    
+    
+Observe me h3 que o Snort detectou a varredura. Agora, a partir de ```h2``` vamos realizar ataque DoS com o ```hping3```.
+
+.. code:: console
+
+    mininet-wifi> h2 hping3 -c 10000 -d 120 -S -w 64 -p 21 --flood --rand-source 10.0.0.254
+    
+    
+Observe novas informações sendo impressas em ```h3```.
+
+
+**Experimente criar suas próprias regras**
+
+Por exemplo, tente criar uma regra que emita alerta ou faça bloqueio do ping.
+
+.. warning::
+
+   - Dica: crie sua regra em /etc/snort/rules/my-icmp-rule.rules 
+   - Por padrão o snort roda em modo IDS. Para que seja executado em modo IPS, ele precisa de um recurso que o snort chama de inline. Portanto, você precisa fazer com que o snort rode neste modo inline caso queira fazê-lo funcionar como um IPS
+   - O modo NIDS de Snort funciona com base nas regras especificadas no arquivo /etc/snort/snort.conf
+   - O caminho das regras normalmente está localizado no diretório /etc/snort/rules
+
+
+
 
 
