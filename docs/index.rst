@@ -8,6 +8,7 @@
    dos
    dictionary_attack
    evil-twin-attack
+   firewall
    wpe-brute-force
    
 .. toctree::
