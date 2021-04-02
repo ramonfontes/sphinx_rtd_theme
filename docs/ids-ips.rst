@@ -1,6 +1,9 @@
 ************
-IDS/IPS
+IDS/IPS com Snort
 ************
+
+
+O Snort é um Sistema de Detecção de Intrusão de código aberto que você pode usar em seus sistemas Linux. Este tutorial revisará a configuração básica do Snort IDS e ensinará como criar regras para detectar atividades no sistema.
 
 
 .. Note::
@@ -11,6 +14,8 @@ IDS/IPS
     
     - Containernet - https://github.com/ramonfontes/containernet
     - Snort
+    - nmap
+    - hping3
     
     **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Porém, para utilizar o containernet você deverá entrar no diretório ~/containernet e dentro dele executar o comando `sudo make install` Caso alguma dependência esteja faltando ela terá de ser resolvida.**
     
@@ -67,7 +72,24 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
         topology()
 
 
-Então, após executar o código, o Snort pode ser iniciado da seguinte forma:
+Para este tutorial, a rede que usaremos é: 10.0.0.0/8. Edite seu arquivo /etc/snort/snort.conf e substitua o ```any``` ao lado de ipvar ```$HOME_NET``` com estas informações de rede, como mostrado na tela de exemplo abaixo:
+
+.. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/snort1.png?raw=true
+
+Alternativamente, você também pode definir endereços IP específicos separados por vírgula entre [], como mostrado nesta captura de tela:
+
+.. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/snort2.png?raw=true
+
+Agora vamos executar o comando abaixo na linha de comando:
+
+# snort -d -l /var/log/snort/ -h 10.0.0.0/8 -A console -c /etc/snort/snort.conf
+
+Onde:
+   - d = tells snort to show data
+   - l = determines the logs directory
+   - h = specifies the network to monitor
+   - A = instructs snort to print alerts in the console
+   - c = specifies snort the configuration file
 
 
 .. code:: console
