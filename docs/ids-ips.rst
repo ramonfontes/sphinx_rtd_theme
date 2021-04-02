@@ -67,11 +67,11 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
         topology()
 
 
-Então, após executar o código, uma simples regra com uso do Iptables poderá ser criada através do comando abaixo:
+Então, após executar o código, o Snort pode ser iniciado da seguinte forma:
 
 
 .. code:: console
 
-  mininet-wifi> h3 iptables -A INPUT -p tcp --destination-port 80 -j DROP
+  mininet-wifi> xxxx
 
 
