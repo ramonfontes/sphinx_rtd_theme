@@ -113,9 +113,7 @@ Observe me h3 que o Snort detectou a varredura. Agora, a partir de ```h2``` vamo
 Observe novas informações sendo impressas em ```h3```.
 
 
-**Experimente criar suas próprias regras**
-
-Por exemplo, tente criar uma regra que emita alerta ou faça bloqueio do ping.
+**Experimente criar suas próprias regras**: Por exemplo, tente criar uma regra que emita alerta ou faça bloqueio do ping.
 
 .. warning::
 
