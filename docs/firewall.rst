@@ -10,7 +10,7 @@ Firewall
     **Requisitos:** 
     
     - Containernet - https://github.com/ramonfontes/containernet
-    - iptables
+    - Iptables
     
     **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Porém, para utilizar o containernet você deverá entrar no diretório ~/containernet e dentro dele executar o comando `sudo make install` Caso alguma dependência esteja faltando ela terá de ser resolvida.**
     
@@ -36,7 +36,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
 
         info('*** Adding docker containers\n')
         h1 = net.addHost('h1', ip='10.0.0.1', cls=Docker,
-                            dimage="ramonfontes/dos-attack")
+                         dimage="ramonfontes/dos-attack")
         h2 = net.addHost('h2', ip='10.0.0.2', cls=Docker,
                          dimage="ramonfontes/dos-attack")
         h3 = net.addHost('h3', ip='10.0.0.254', cls=Docker,
