@@ -9,6 +9,7 @@
    dictionary_attack
    evil-twin-attack
    firewall
+   ids-ips
    wpe-brute-force
    
 .. toctree::
