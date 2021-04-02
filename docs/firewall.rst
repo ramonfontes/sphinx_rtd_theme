@@ -67,7 +67,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
         topology()
 
 
-Então, após executar o código, um simples ataque DoS (não DDoS) poderia ser realizado através do comando abaixo:
+Então, após executar o código, uma simples regra com uso do Iptables poderá ser criada através do comando abaixo:
 
 
 .. code:: console
