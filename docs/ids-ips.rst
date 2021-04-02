@@ -86,10 +86,11 @@ Agora, execute o script acima e em seguida o comando abaixo na linha de comando 
 .. code:: console
    
    mininet-wifi> xterm h3
-   h3# snort -d -l /var/log/snort/ -h 10.0.0.0/8 -A console -c /etc/snort/snort.conf
+   h3# snort -i h3-eth0 -d -l /var/log/snort/ -h 10.0.0.0/8 -A console -c /etc/snort/snort.conf
 
 Onde:
    
+   - i = interface
    - d = tells snort to show data
    - l = determines the logs directory
    - h = specifies the network to monitor
@@ -100,7 +101,7 @@ Agora, vamos lançar uma verificação rápida a partir de ```h1``` usando o nma
 
 .. code:: console
 
-    mininet-wifi> h1 nmap -v -sT -0 10.0.0.254
+    mininet-wifi> h1 nmap -v -sT -O 10.0.0.254
     
     
 Observe me h3 que o Snort detectou a varredura. Agora, a partir de ```h2``` vamos realizar ataque DoS com o ```hping3```.
