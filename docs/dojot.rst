@@ -4,12 +4,6 @@ Dojot
 
 In this activity we will see some examples of how to simulate a 6loWPAN network for the Internet of Things. 6LoWPAN (IPv6 over Low power Wireless Personal Area Networks) is an IP protocol that creates and maintains the specifications that allow us to use the IPv6 protocol on the IEEE 802.15.4 standard. It has been widely used in the implementation of sensor networks with energy limitations, low signal range, low transmission rates and low cost. The integration of sensor networks with the Internet is seen as essential for the Internet of Things (IoT), allowing the use of distributed sensor applications.
 
-.. Note::
-
-    First of all, you will need to install `mosquitto`, `mosquitto-clients` and `paho-mqtt` packages as well as `Dojot` (http://www.dojot.com.br/).
-
-    Follow the detailed install instructions available here: https://docs.google.com/document/d/1tbeC0T-zd7yNnSS16IYYdp4UXXk-ePKg1OZm6_XaDAQ/edit?usp=sharing
-
 
 **Activity 1 - MQTT basics with Mosquitto**
 
