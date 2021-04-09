@@ -104,7 +104,6 @@ Now that we already have our environment ready to be used, let's take the script
       sensor3.cmd('route add -A inet6 default gw 2001::6')
       ap1.cmd('ip -6 addr add 2001::6/64 dev ap1-pan0')
       os.system('ip -6 addr add 2002::1/64 dev wan0-eth0')
-      ap1.cmd('ip -6 addr add 2002::2/64 dev ap1-eth5')
 
       info("*** Configuring ip6tables rules\n")
       iface = 'wan0-eth0'
