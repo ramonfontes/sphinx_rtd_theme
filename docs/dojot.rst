@@ -245,11 +245,12 @@ Now, in the dashboard you need to do the following steps:
 Now, let's run our network topology. To do so you need to run ```lowpan.py``` as below:
 
 .. code:: console
+
     ~/mininet-wifi$ sudo python lowpan.py df7327 temperature
 
 
-* ```df7327```: device id created by Dojot - you have to set the id of a device
-* ```temperature```: topic
+    * ```df7327```: device id created by Dojot - you have to set the id of a device 
+    * ```temperature```: topic
 
 
 Four terminals should appear: one for each sensor and one for the controller
