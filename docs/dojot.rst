@@ -229,18 +229,15 @@ Then, considering that you already have installed Dojot, open its dashboard in a
 
 Now, in the dashboard you need to do the following steps:
 
-  - create a new template and an attribute called ```sensor1-temperature``` with value type ```integer```
-  - now open the ```device``` menu and add the template created previously
-  - go to ```flows``` and add an ```event device```  as input flow. Select the device you have created and check both ```actuation``` and ```publication``` checkboxes as well. 
-  - add a ```change function``` and configure the set field as below:
-  ```msg.payload.data.attrs.sta1-temperature```
-  - in the "to" field, write:
-  ```Alert message!```
-  - finally, add a ```multi actuate node``` and select `Specific Devices` in the action field. Then select your device and configure the source field as below:
-  ```msg.payload.data.attrs.sta1-temperature```
-  - create a link between the `event device` and the ```change function``` and another link between the ```change function``` and the ```multi actuate node```
-  - save the changes in the dashboard!
-  - close the web browser
+    - create a new template and an attribute called ```sensor1-temperature``` with value type ```integer```
+    - now open the ```device``` menu and add the template created previously
+    - go to ```flows``` and add an ```event device```  as input flow. Select the device you have created and check both ```actuation``` and ```publication``` checkboxes as well. 
+    - add a ```change function``` and configure the set field as follows: ```msg.payload.data.attrs.sta1-temperature```
+    - in the "to" field, write: ```Alert message!```
+    - finally, add a ```multi actuate node``` and select `Specific Devices` in the action field. Then select your device and configure the source field as follows: ```msg.payload.data.attrs.sta1-temperature```
+    - create a link between the `event device` and the ```change function``` and another link between the ```change function``` and the ```multi actuate node```
+    - save the changes in the dashboard!
+    - close the web browser
 
 Now, let's run our network topology. To do so you need to run ```lowpan.py``` as below:
 
