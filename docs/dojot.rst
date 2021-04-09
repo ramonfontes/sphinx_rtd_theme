@@ -20,6 +20,10 @@ In this activity we will see some examples of how to simulate a 6loWPAN network 
 
     You can follow the steps available `here <https://docs.google.com/document/d/17Sv1_W8Hs4st9QcBtcU55ofamNUNdU749NSQyCz7ctU/edit?usp=sharing>`_. However, I strongly suggest you to use the ```docker-compose.yml``` file available `here <https://gist.github.com/ramonfontes/fd8360e1c7a1d8f0f9b5e8e1d3f555de>`_. That said, you have to replace the ```docker-compose.yml``` file provided by dojot with the suggested one.
 
+.. warning:: 
+
+    Do not go ahead without making the modification suggested above
+
 
 In this activity we will simulate some sensors that send the current temperature to Dojot. The code will find below should work with the most recent version of Mininet-WiFi, but you can consider the commit ```db71bf47cb``` if you face problems with it.
 
