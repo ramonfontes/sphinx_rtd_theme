@@ -55,7 +55,7 @@ Em seguida, force a desconexão de **sta1**.
 
 .. code:: console
     
-    mininet-wifi> sta1 iw dev sta1-wlan0 disconnet
+    mininet-wifi> sta1 iw dev sta1-wlan0 disconnect
 
 
 Agora, crie um arquivo chamado `arquivo.psk` contendo o seguinte conteúdo:
