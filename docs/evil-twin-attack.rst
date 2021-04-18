@@ -188,7 +188,7 @@ Você poderá confirmar através do comando abaixo que `sta1` agora está associ
       beacon int:	100
 
 
-Qualquer acesso realiado por `sta1` agora será redirecionado para o `ap2`.
+Qualquer acesso realizado por `sta1` agora será redirecionado para o `ap2`.
  
 
 .. admonition:: Perguntas
