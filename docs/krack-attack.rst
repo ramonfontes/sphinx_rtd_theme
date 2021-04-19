@@ -148,7 +148,7 @@ Now, check the association of ```sta1``` from the first terminal.
         beacon int:	100
 
 
-And let's run the vulnerability. To do so, change the position of ```sta1``` and do some ```ping```.
+And let's run the vulnerability. To do so, change the position of ```sta1``` and do some ```ping``` to ```ap2```.
 
 .. code:: console
 
