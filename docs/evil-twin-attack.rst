@@ -174,6 +174,7 @@ Você poderá confirmar através do comando abaixo que `sta1` agora está associ
 
 
 .. code:: console
+
      containernet> sta1 iw dev sta1-wlan0 link
      Connected to 02:00:00:00:02:00 (on sta1-wlan0)
       SSID: simplewifi
