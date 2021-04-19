@@ -10,6 +10,7 @@
    evil-twin-attack
    firewall
    ids-ips
+   krack-attack
    wpe-brute-force
    
 .. toctree::
