@@ -57,7 +57,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      ap2.cmd('ifconfig ap2-wlan0 up 192.168.190.1 netmask 255.255.255.0')
 
      sta2.cmd('route add default gw 192.168.190.1')
-     sta2.cmd('iw dev sta1-wlan0 interface add mon0 type monitor')
+     sta2.cmd('iw dev sta2-wlan0 interface add mon0 type monitor')
      sta1.cmd('iwconfig sta1-wlan0 essid simplewifi ap 02:00:00:00:03:00')
 
      info("*** Running CLI\n")
