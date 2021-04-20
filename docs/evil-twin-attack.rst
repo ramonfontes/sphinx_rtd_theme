@@ -11,7 +11,7 @@ Hackeando a senha WPA2 usando Evil Twin Attack e Hostapd
 
 .. admonition:: O Roteiro
 
-    O roteiro deste ataque é o seguinte: o atacante possui acesso à todas as informações de rede do ponto de acesso vítima ```ap1``` (isso inclui a senha). Desta forma, é escolhida uma vítima cliente ```sta1``` e a conexão desta vítima com o ```ap1``` deverá ser derrubada pelo atacante. A página que a vítima irá acessar ao conectar ao ```ap2``` é uma página fictícia qualquer com formulário que pode ser utilizado para capturar informações da vítima cliente.
+    O roteiro deste ataque é o seguinte: o atacante possui acesso à todas as informações de rede do ponto de acesso vítima ```ap1``` (isso inclui a senha). Desta forma, é escolhida uma vítima cliente ```sta1``` e a conexão desta vítima com o ```ap1``` deverá ser derrubada pelo atacante. A página que a vítima irá acessar ao conectar ao ```ap2``` é uma página fictícia qualquer com formulário que pode ser utilizado para capturar informações da vítima cliente. Como você possui todas as informações do ```ap1```, ```ap2``` deverá possuir a mesma configuração de rede do ```ap1```.
 
 
 .. Note::
