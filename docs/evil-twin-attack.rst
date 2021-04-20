@@ -102,10 +102,10 @@ Na topologia do código acima, `sta1` será a vítima e `sta2` o atacante. Além
 
 .. admonition:: Passo a ser realizado
  
-   - Neste momento, você deverá configurar ap2 de forma que ele permita o encaminhamento de dados entre a sua interface sem fio e sua interface com fio, de forma que a vítima possa ter acesso à Internet.
+   - Neste momento, você deverá configurar ```ap2``` de forma que ele permita o encaminhamento de dados entre a sua interface sem fio e sua interface com fio, de forma que a vítima possa ter acesso à Internet.
    - Execute também o hostapd em `ap2` para que a vítima possa receber sinal do ponto de acesso falso.
    
-Neste momento, `ap2` deverá estar acessível à `sta1`, conforme pode ser observado abaixo:
+Neste momento, ```ap2``` deverá estar acessível à ```sta1```, conforme pode ser observado abaixo:
 
 .. code:: console
 
@@ -117,7 +117,7 @@ Neste momento, `ap2` deverá estar acessível à `sta1`, conforme pode ser obser
 A saída acima comprova que existem dois pontos de acesso divulgando o mesmo SSID.
 
 
-Neste momento, você, que é `sta2`, deverá conectar-se ao ponto de acesso `ap2` - o seu AP falso - e testar a conectividade com a Internet. Você vai precisar utilizar o ```wpa_supplicant``` para fazer a associação de ```sta2``` com o ```ap2```. 
+Neste momento, você, que é ```sta2```, deverá conectar-se ao ponto de acesso ```ap2``` - o seu AP falso - e testar a conectividade com a Internet. Você vai precisar utilizar o ```wpa_supplicant``` para fazer a associação de ```sta2``` com o ```ap2```. 
 
 .. admonition:: Passo a ser realizado
    
@@ -154,11 +154,11 @@ E, então, poderá ser realizada uma tentativa de ping para 8.8.8.8.
 
 .. admonition:: Passo a ser realizado
 
-   - Agora, você deverá configurar `ap2` de forma que todo tráfego tendo como porta de origem 80 seja redirecionado para 192.168.190.1 também na porta 80. Dica: você pode ter que utilizar o `iptables`.
-   - Como o `ap2` já vem pré-configurado com os recursos de software necessários para a execução do ataque, inicie os serviços `apache2` e `mysql`.
-   - Defina o endereço de DNS de `sta2` para 8.8.8.8.
+   - Agora, você deverá configurar ```ap2``` de forma que todo tráfego tendo como porta de origem 80 seja redirecionado para 192.168.190.1 também na porta 80. Dica: você pode ter que utilizar o `iptables`.
+   - Como o ```ap2``` já vem pré-configurado com os recursos de software necessários para a execução do ataque, inicie os serviços ```apache2``` e ```mysql```.
+   - Defina o endereço de DNS de ```sta2``` para 8.8.8.8.
  
-Então, ao tentar acessar o endereço http://www.google.com:80 ou qualquer outro site na porta 80 a partir de `sta2`, você deverá obter como resultado algo similar à figura apresentada abaixo:
+Então, ao tentar acessar o endereço http://www.google.com:80 ou qualquer outro site na porta 80 a partir de ```sta2```, você deverá obter como resultado algo similar à figura apresentada abaixo:
 
 .. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/evil-twin-screenshot.png?raw=true
 
@@ -185,9 +185,9 @@ Você pode confirmar a obtenção das informações através de uma consulta na 
      +-----------+-----------+  
      1 row in set (0.00 sec)   
 
-Agora, só nos basta executar o airodump e o aireplay para forçar a desassociação de `sta1` em relação ao `ap1`. Execute os comandos apropriados de forma a forçar a desconexão. Primeiro você precisa executar o airodump no canal onde o ```ap1``` está operando e, então, o ```aireplay```.
+Agora, só nos basta executar o ```airodump``` e o ```aireplay``` para forçar a desassociação de ```sta1``` em relação ao ```ap1```. Execute os comandos apropriados de forma a forçar a desconexão. Primeiro você precisa executar o ```airodump``` no canal onde o ```ap1``` está operando e, então, o ```aireplay```.
 
-O comando abaixo poderá ser utilizado para confirmar que ```sta1``` está associado ao `ap2`.
+O comando abaixo poderá ser utilizado para confirmar que ```sta1``` está associado ao ```ap2```.
 
 
 .. code:: console
@@ -206,7 +206,7 @@ O comando abaixo poderá ser utilizado para confirmar que ```sta1``` está assoc
       beacon int:	100
 
 
-Qualquer acesso realizado por `sta1` agora será redirecionado para o `ap2`.
+Qualquer acesso realizado por ```sta1``` agora será redirecionado para o ```ap2```.
  
 
 .. admonition:: Perguntas
