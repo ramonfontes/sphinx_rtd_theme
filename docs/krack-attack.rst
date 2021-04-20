@@ -2,6 +2,9 @@
 Key Reinstallation Attacks
 ************
 
+Intro
+-------------
+
 .. Note::
   **Inspired in https://www.krackattacks.com/**
   
