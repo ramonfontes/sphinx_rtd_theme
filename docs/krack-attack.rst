@@ -29,22 +29,27 @@ Preparing the environment
 
 .. code:: console
 
-   ~$ mkdir working_dir
+   # creating workind directory
+   ~$ mkdir working_dir && cd working_dir
+   
+   # installing dependencies
    ~/working_dir$ sudo apt install libnl-route-3-dev
+   
+   # configuring hostap
    ~/working_dir$ git clone http://w1.fi/hostap.git
-   ~/working_dir$ cd hostap
-   ~/working_dir/hostap$ git reset df949062017
+   ~/working_dir$ cd hostap && git reset df949062017
    ~/working_dir/hostap$ cd wpa_supplicant/
    ~/working_dir/hostap/wpa_supplicant$ cp defconfig .config
    ~/working_dir/hostap/wpa_supplicant$ sudo make install
    ~/working_dir/hostap/wpa_supplicant$ cd ../hostapd
    
-   # uncomment the line with CONFIG_IEEE80211R=y in defconfig and add CONFIG_IEEE80211R_AP=y just below
+   # uncomment the line with CONFIG_IEEE80211R=y in defconfig
    ~/working_dir/hostap/hostapd$ cp defconfig .config
    ~/working_dir/hostap/hostapd$ sudo make install
    
    ~/working_dir/hostap/hostapd$ cd ~/working_dir
    ~/working_dir$ git clone https://github.com/ramonfontes/krackattack
+   ~/working_dir$ cd krackattack && sudo ./pysetup.sh
    
 
 First of all trying to identify the network topology that will be generated through the code below:
@@ -125,6 +130,7 @@ So considering that you have named the code above as ```krack-attack```, run it 
 
 .. code:: console
 
+    cd ~/working_dir
     ~/working_dir$ sudo python krack-attack.py
     
 
