@@ -8,6 +8,12 @@ Hackeando a senha WPA2 usando Evil Twin Attack e Hostapd
 
 .. image:: https://github.com/ramonfontes/sphinx_rtd_theme/blob/master/docs/imgs/evil-twin.png?raw=true
 
+
+.. admonition:: O Roteiro
+
+    O roteiro deste ataque é o seguinte: o atacante possui acesso à todas as informações de rede do ponto de acesso vítima ```ap1``` (isso inclui a senha). Desta forma, é escolhida uma vítima cliente ```sta1``` e a conexão desta vítima com o ```ap1``` deverá ser derrubada pelo atacante. A página que a vítima irá acessar ao conectar ao ```ap2``` é uma página fictícia qualquer com formulário que pode ser utilizado para capturar informações da vítima cliente.
+
+
 .. Note::
   **Neste documento você irá compreender como realizar o ataque denominado de  Evil Twin Attack**
   
@@ -17,6 +23,8 @@ Hackeando a senha WPA2 usando Evil Twin Attack e Hostapd
   - Hostapd
 
   **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Porém, para utilizar o containernet você deverá entrar no diretório ~/containernet e dentro dele executar o comando `sudo make install` Caso alguma dependência esteja faltando ela terá de ser resolvida.**
+  
+  
 
 Antes de tudo você precisa identificar a topologia de rede que será gerada através do código abaixo:
 
