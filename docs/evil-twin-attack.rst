@@ -39,10 +39,10 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      net = Containernet()
 
      info("*** Creating nodes\n")
-     sta1 = net.addStation('sta1', ip='192.168.190.2/24')
-     sta2 = net.addStation('sta2', ip='192.168.190.3/24')
+     sta1 = net.addStation('sta1', ip='192.168.190.2/24', passwd='123456789a', encrypt='wpa2')
+     sta2 = net.addStation('sta2', ip='192.168.190.3/24', passwd='123456789a', encrypt='wpa2')
      ap1 = net.addAccessPoint('ap1', ssid="simplewifi", mode="g", channel="1",
-                              failMode="standalone", datapath='user')
+                              failMode="standalone", datapath='user', passwd='123456789a', encrypt='wpa2')
      ap2 = net.addStation('ap2', cls=DockerSta, dimage="ramonfontes/rogue-ap", cpu_shares=20)
 
      info("*** Configuring wifi nodes\n")
@@ -52,8 +52,6 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      net.build()
      ap1.start([])
 
-     ap2.setMasterMode(intf='ap2-wlan0', ssid='simplewifi', channel='1', mode='g')
-     #ap2.cmd('pkill -f \"ap2-wlan0.apconf\"')
      ap2.cmd('ifconfig ap2-wlan0 up 192.168.190.1 netmask 255.255.255.0')
 
      sta2.cmd('route add default gw 192.168.190.1')
@@ -119,7 +117,30 @@ Neste momento, `ap2` deverá estar acessível à `sta1`, conforme pode ser obser
 A saída acima comprova que existem dois pontos de acesso divulgando o mesmo SSID.
 
 
-Neste momento, você que é `sta2`, deverá conectar-se ao ponto de acesso `ap2` - o seu AP falso - e testar a conectividade com a Internet. Portanto, ao conectar-se, a saída esperada é a que se encontra abaixo:
+Neste momento, você, que é `sta2`, deverá conectar-se ao ponto de acesso `ap2` - o seu AP falso - e testar a conectividade com a Internet. Você vai precisar utilizar o ```wpa_supplicant``` para fazer a associação de ```sta2``` com o ```ap2```. 
+
+.. admonition:: Passo a ser realizado
+   
+   - Configurar o wpa_supplicant para ```sta2``` e conectá-lo ao ```ap2```.
+
+Após executar o ```wpa_supplicant```, a saída abaixo é esperada.
+
+.. code:: console
+
+    containernet> sta2 iw dev sta2-wlan0 link
+    Connected to 02:00:00:00:02:00 (on sta2-wlan0)
+      SSID: simplewifi
+      freq: 2412
+      RX: 2116744 bytes (61513 packets)
+      TX: 2511 bytes (101 packets)
+      signal: -36 dBm
+      tx bitrate: 1.0 MBit/s
+
+      bss flags:	short-slot-time
+      dtim period:	2
+      beacon int:	100
+
+E, então, poderá ser realizada uma tentativa de ping para 8.8.8.8.
 
 .. code:: console
 
@@ -164,13 +185,9 @@ Você pode confirmar a obtenção das informações através de uma consulta na 
      +-----------+-----------+  
      1 row in set (0.00 sec)   
 
-Agora, só nos basta executar o comando abaixo para forçar a desassociação de `sta1` em relação ao `ap1`.
+Agora, só nos basta executar o airodump e o aireplay para forçar a desassociação de `sta1` em relação ao `ap1`. Execute os comandos apropriados de forma a forçar a desconexão. Primeiro você precisa executar o airodump no canal onde o ```ap1``` está operando e, então, o ```aireplay```.
 
-.. code:: console
-
-   aireplay-ng -00 -a 02:00:00:00:03:00 mon0 --ignore-negative-one
-   
-Você poderá confirmar através do comando abaixo que `sta1` agora está associado ao `ap2`.
+O comando abaixo poderá ser utilizado para confirmar que ```sta1``` está associado ao `ap2`.
 
 
 .. code:: console
