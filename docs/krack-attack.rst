@@ -47,6 +47,7 @@ Preparing the environment
    ~/working_dir/hostap/hostapd$ cp defconfig .config
    ~/working_dir/hostap/hostapd$ sudo make install
    
+   # Getting the krack attack vulnerability test
    ~/working_dir/hostap/hostapd$ cd ~/working_dir
    ~/working_dir$ git clone https://github.com/ramonfontes/krackattack
    ~/working_dir$ cd krackattack && sudo ./pysetup.sh
