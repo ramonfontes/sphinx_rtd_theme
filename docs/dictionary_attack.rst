@@ -10,7 +10,7 @@ Dictionary attack
   **Requisitos:** 
   
   - Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
-  - airodump-ng
+  - aircrack-ng
   
   **A VM disponível em https://github.com/intrig-unicamp/mininet-wifi deverá possuir todos os recursos necessários para reproduzir este documento. Caso algum pacote estiver faltando, instale-os**
   
