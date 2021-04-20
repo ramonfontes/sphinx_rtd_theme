@@ -70,7 +70,7 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
      topology()
 
 
-Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-twin-attack.py`, execute-o conforme abaixo:
+Considerando que o código acima tenha sido salvo em um arquivo com nome ```evil-twin-attack.py```, execute-o conforme abaixo:
 
 .. code:: console
 
@@ -80,7 +80,7 @@ Considerando que o código acima tenha sido salvo em um arquivo com nome `evil-t
 
     O tempo de execução será maior se você estiver executando o código acima pela primeira vez, pois uma imagem gravada em conta no Docker será carregada na VM.
     
-De acordo com a topologia acima, `sta1` deverá estar conectado ao ponto de acesso `ap1`. Voce pode confirmar esta afirmação utilizando o comando abaixo:
+De acordo com a topologia acima, ```sta1``` deverá estar conectado ao ponto de acesso ```ap1```. Voce pode confirmar esta afirmação utilizando o comando abaixo:
 
 .. code:: console
 
@@ -97,13 +97,13 @@ De acordo com a topologia acima, `sta1` deverá estar conectado ao ponto de aces
           dtim period:	2
           beacon int:	100
     
-Na topologia do código acima, `sta1` será a vítima e `sta2` o atacante. Além disso, o ponto de acesso `ap1` será o ponto de acesso real e o ataque será feito através do ponto de acesso `ap2`.
+Na topologia do código acima, ```sta1``` será a vítima e ```sta2``` o atacante. Além disso, o ponto de acesso ```ap1``` será o ponto de acesso real e o ataque será feito através do ponto de acesso ```ap2```.
 
 
 .. admonition:: Passo a ser realizado
  
    - Neste momento, você deverá configurar ```ap2``` de forma que ele permita o encaminhamento de dados entre a sua interface sem fio e sua interface com fio, de forma que a vítima possa ter acesso à Internet.
-   - Execute também o hostapd em `ap2` para que a vítima possa receber sinal do ponto de acesso falso.
+   - Execute também o hostapd em ```ap2``` para que a vítima possa receber sinal do ponto de acesso falso.
    
 Neste momento, ```ap2``` deverá estar acessível à ```sta1```, conforme pode ser observado abaixo:
 
