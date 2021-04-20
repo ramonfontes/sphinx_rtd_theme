@@ -6,6 +6,8 @@ Key Reinstallation Attacks
 How to perform the Key Reinstallation Attack
 -------------
 
+The result of this demo will be quite similar to the video below:
+
 .. raw:: html
 
     <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
@@ -18,7 +20,6 @@ How to perform the Key Reinstallation Attack
   **Requirements:** 
   
   - Mininet-WiFi - https://github.com/intrig-unicamp/mininet-wifi
-  - Ryu - https://github.com/ramonfontes/ryu (branch dev)
   - Hostap - http://w1.fi/hostap.git (commit df949062017bacae8095edeb73647ef97e7566bc )
   - libnl-route-3-dev
 
