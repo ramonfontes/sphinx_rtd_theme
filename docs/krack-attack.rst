@@ -111,7 +111,10 @@ The network topology will be generated through the code below.
         sta1.cmd("ifconfig mon0 up")
 
         sleep(10)
-        makeTerm(sta1, title='Scanning', cmd="bash -c 'iw dev sta1-wlan0 scan;'")
+        # We need AP scanning. Otherwise, roam won't wok
+        # This terminal automatically closes after 10 seg.
+        makeTerm(sta1, title='Scanning', cmd="bash -c 'echo \"AP Scanning\" && iw dev sta1-wlan0 scan;'")
+        # Run the FT test
         makeTerm(sta1, title='KrackAttack', cmd="bash -c 'cd krackattack && python krack-ft-test.py;'")
 
         info("*** Running CLI\n")
