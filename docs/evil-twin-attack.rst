@@ -47,6 +47,9 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
 
      info("*** Configuring wifi nodes\n")
      net.configureWifiNodes()
+     
+     info("*** Adding link\n")
+     net.addLink(sta1, ap1)
 
      info("*** Starting network\n")
      net.build()
@@ -56,7 +59,6 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
 
      sta2.cmd('route add default gw 192.168.190.1')
      sta2.cmd('iw dev sta2-wlan0 interface add mon0 type monitor')
-     sta1.cmd('iwconfig sta1-wlan0 essid simplewifi ap 02:00:00:00:03:00')
 
      info("*** Running CLI\n")
      CLI(net)
