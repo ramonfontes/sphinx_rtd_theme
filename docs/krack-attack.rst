@@ -53,7 +53,7 @@ Preparing the environment
    ~/working_dir$ cd krackattack && sudo ./pysetup.sh
    
 
-First of all trying to identify the network topology that will be generated through the code below:
+The network topology will be generated through the code below.
 
 .. code:: python
 
@@ -126,7 +126,6 @@ First of all trying to identify the network topology that will be generated thro
         topology()
 
 
-
 So considering that you have named the code above as ```krack-attack```, run it as follows:
 
 .. code:: console
@@ -134,7 +133,6 @@ So considering that you have named the code above as ```krack-attack```, run it 
     cd ~/working_dir
     ~/working_dir$ sudo python krack-attack.py
     
-
 You should see now two terminals and you can use the Mininet-WiFi CLI to roam between ```ap1``` and ```ap2```:
     
 .. code:: console
