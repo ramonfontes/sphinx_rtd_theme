@@ -95,10 +95,10 @@ The network topology will be generated through the code below.
         net.configureWifiNodes()
 
         ap1.setMasterMode(intf='ap1-wlan0', ssid='handover', channel='1',
-                          ieee80211r=True, bssid_list=[['ap2']], mobility_domain='a1b2',
+                          ieee80211r=True, mobility_domain='a1b2',
                           passwd='123456789a', encrypt='wpa2')
         ap2.setMasterMode(intf='ap2-wlan0', ssid='handover', channel='6',
-                          ieee80211r=True, bssid_list=[['ap1']], mobility_domain='a1b2',
+                          ieee80211r=True, mobility_domain='a1b2',
                           passwd='123456789a', encrypt='wpa2')
 
         info("*** Plotting Graph\n")
