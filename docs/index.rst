@@ -5,8 +5,9 @@
    :maxdepth: 2
 
    arp-spoofing
-   dos
    dictionary_attack
+   diffie-hellman
+   dos
    evil-twin-attack
    firewall
    ids-ips
