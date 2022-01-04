@@ -64,7 +64,7 @@ Uma vez compreendida a topologia de rede, execute um código com conteúdo exata
   $ sudo python dhcp.py
 
 
-Agora, em um novo terminal, edite o arquivo `/etc/dhcp/dhcpd.conf` de forma que ela possua apenas o conteúdo abaixo:
+Agora, em um novo terminal, edite o arquivo `/etc/dhcp/dhcpd.conf` de forma que ele possua apenas o conteúdo abaixo:
 
 .. code:: console
   option domain-name-servers 192.168.11.1;
