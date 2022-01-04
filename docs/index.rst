@@ -15,14 +15,13 @@
    wpe-brute-force
    
 .. toctree::
-   :maxdepth: 1
-   :hidden:
+   :caption: Computer Networking
+   :maxdepth: 2
 
-   changselog
+   dhcp
 
 .. toctree::
     :maxdepth: 2
-    :numbered:
     :caption: Internet of Things
 
     dojot
