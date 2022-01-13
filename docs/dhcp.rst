@@ -67,6 +67,7 @@ Uma vez compreendida a topologia de rede, execute um código com conteúdo exata
 Agora, em um novo terminal, edite o arquivo `/etc/dhcp/dhcpd.conf` de forma que ele possua apenas o conteúdo abaixo:
 
 .. code:: console
+
   option domain-name-servers 192.168.11.1;
   subnet 192.168.11.0 netmask 255.255.255.0 {
       range 192.168.11.2 192.168.11.254;
