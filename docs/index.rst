@@ -19,6 +19,8 @@
    :maxdepth: 2
 
    dhcp
+   static
+   sixinfour
 
 .. toctree::
     :maxdepth: 2
