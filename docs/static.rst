@@ -22,7 +22,6 @@ Antes de tudo você precisa identificar a topologia de rede que será gerada atr
       """@author: Ramon Fontes
       @email: ramon.fontes@imd.ufrn.br"""
 
-      from mininet.node import Controller
       from mininet.log import setLogLevel, info
       from mininet.cli import CLI
       from mininet.net import Mininet
